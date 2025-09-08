@@ -1,0 +1,470 @@
+[
+  {
+    "startLocation": {
+      "description": "Mykonos, Greece",
+      "type": "Point",
+      "coordinates": [25.353665743486, 37.445116047511],
+      "address": "Mykonos Port, Mykonos 846 00, Greece"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6,
+    "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+    "startDates": [
+      "2025-09-19T09:00:00.000Z",
+      "2025-10-20T09:00:00.000Z",
+      "2025-11-18T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2955",
+    "name": "Cyclades Island Hopper",
+    "duration": 7,
+    "maxGroupSize": 15,
+    "difficulty": "medium",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
+    "price": 497,
+    "summary": "Exploring the stunning Cyclades islands by boat and on foot",
+    "description": "Discover the beauty of the Cyclades archipelago with this island-hopping adventure. Sail between picturesque islands, explore charming villages, and hike along coastal paths. Visit Mykonos with its iconic windmills, Santorini's caldera views, and Paros' golden beaches. Enjoy crystal-clear waters, traditional Greek cuisine, and breathtaking sunsets. This tour combines sea exploration with light hiking for a perfect balance of relaxation and activity.",
+    "imageCover": "tour-2-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2959",
+        "description": "Mykonos Town",
+        "type": "Point",
+        "coordinates": [25.3259658, 37.4450377],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2958",
+        "description": "Santorini Caldera",
+        "type": "Point",
+        "coordinates": [25.4566636527072, 36.4071112],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2957",
+        "description": "Paros Naoussa",
+        "type": "Point",
+        "coordinates": [25.237282, 37.123797],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2956",
+        "description": "Naxos Portara",
+        "type": "Point",
+        "coordinates": [25.376, 37.107],
+        "day": 6
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Litochoro, Greece",
+      "type": "Point",
+      "coordinates": [22.497, 40.104],
+      "address": "Litochoro 402 00, Greece"
+    },
+    "ratingsAverage": 5,
+    "ratingsQuantity": 9,
+    "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"],
+    "startDates": [
+      "2025-10-25T09:00:00.000Z",
+      "2026-01-20T09:00:00.000Z",
+      "2026-04-05T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2951",
+    "name": "Mount Olympus Hiker",
+    "duration": 5,
+    "maxGroupSize": 25,
+    "difficulty": "easy",
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a1f292f8fb814b56fa184"
+    ],
+    "price": 397,
+    "summary": "Breathtaking hike through Mount Olympus National Park",
+    "description": "Experience the mythical Mount Olympus with guided hikes through lush forests and ancient paths. Explore the home of the Greek gods, visit waterfalls and plateaus with panoramic views. This tour includes easy trails suitable for beginners, with opportunities to spot local wildlife and learn about Greek mythology. Enjoy fresh mountain air and traditional meals at mountain refuges.",
+    "imageCover": "tour-1-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2954",
+        "description": "Prionia",
+        "type": "Point",
+        "coordinates": [22.409, 40.099],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2953",
+        "description": "Skala Peak",
+        "type": "Point",
+        "coordinates": [22.36, 40.08],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2952",
+        "description": "Enipeas Gorge",
+        "type": "Point",
+        "coordinates": [22.45, 40.1],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Arachova, Greece",
+      "type": "Point",
+      "coordinates": [22.583, 38.48],
+      "address": "Arachova 320 04, Greece"
+    },
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 6,
+    "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
+    "startDates": [
+      "2026-01-05T10:00:00.000Z",
+      "2026-02-12T10:00:00.000Z",
+      "2027-01-06T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c295a",
+    "name": "Parnassos Snow Adventure",
+    "duration": 4,
+    "maxGroupSize": 10,
+    "difficulty": "difficult",
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
+    "price": 997,
+    "summary": "Exciting adventure in the snow with snowboarding and skiing on Mount Parnassos",
+    "description": "Hit the slopes of Mount Parnassos, Greece's premier ski destination. Enjoy skiing and snowboarding on well-groomed pistes with stunning views of the Gulf of Corinth. This tour includes lessons for beginners, equipment rental, and après-ski in charming Arachova. Experience winter fun in a Mediterranean setting, with opportunities for off-piste adventures for advanced skiers.",
+    "imageCover": "tour-3-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c295c",
+        "description": "Kellaria Ski Area",
+        "type": "Point",
+        "coordinates": [22.6, 38.54],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295b",
+        "description": "Fterolaka Ski Area",
+        "type": "Point",
+        "coordinates": [22.58, 38.53],
+        "day": 2
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Ioannina, Greece",
+      "type": "Point",
+      "coordinates": [20.85, 39.667],
+      "address": "Ioannina 455 00, Greece"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 7,
+    "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
+    "startDates": [
+      "2025-09-05T09:00:00.000Z",
+      "2026-03-20T10:00:00.000Z",
+      "2026-09-12T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2961",
+    "name": "Epirus Park Explorer",
+    "duration": 10,
+    "maxGroupSize": 15,
+    "difficulty": "medium",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a201e2f8fb814b56fa186"
+    ],
+    "price": 1497,
+    "summary": "Breathing in nature in Greece's most spectacular national parks",
+    "description": "Immerse yourself in the wild beauty of Epirus. Explore Vikos-Aoos National Park with its dramatic gorge, hike through ancient forests, and visit crystal-clear rivers. Discover Samaria Gorge in Crete (as an extension), spot rare wildlife, and enjoy camping under starry skies. This tour combines hiking, rafting, and cultural visits to traditional villages for an ultimate nature escape.",
+    "imageCover": "tour-5-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2965",
+        "description": "Vikos Gorge",
+        "type": "Point",
+        "coordinates": [20.74081, 39.92894],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2964",
+        "description": "Aoos River",
+        "type": "Point",
+        "coordinates": [20.75, 39.9],
+        "day": 4
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2963",
+        "description": "Zagori Villages",
+        "type": "Point",
+        "coordinates": [20.78, 39.88],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2962",
+        "description": "Pindus Mountains",
+        "type": "Point",
+        "coordinates": [20.9, 39.8],
+        "day": 9
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Athens, Greece",
+      "type": "Point",
+      "coordinates": [23.7275388, 37.9838096],
+      "address": "Syntagma Square, Athens 105 57, Greece"
+    },
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 5,
+    "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
+    "startDates": [
+      "2025-09-11T10:00:00.000Z",
+      "2025-11-02T09:00:00.000Z",
+      "2025-12-09T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c295d",
+    "name": "Athens Urban Explorer",
+    "duration": 9,
+    "maxGroupSize": 20,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
+    "price": 1197,
+    "summary": "Discovering the historic and modern sides of Athens and nearby areas",
+    "description": "Experience the heartbeat of Greece in Athens. Explore the Acropolis, wander through Plaka's charming streets, and visit nearby Sounion with its Temple of Poseidon. Discover modern Athens with street art tours, local markets, and day trips to Delphi. This tour blends ancient history with contemporary culture, including food tastings and neighborhood walks.",
+    "imageCover": "tour-4-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2960",
+        "description": "Acropolis",
+        "type": "Point",
+        "coordinates": [23.72611, 37.970833],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295f",
+        "description": "Cape Sounion",
+        "type": "Point",
+        "coordinates": [24.0247, 37.6503],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295e",
+        "description": "Delphi",
+        "type": "Point",
+        "coordinates": [22.501, 38.482],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Kalymnos, Greece",
+      "type": "Point",
+      "coordinates": [26.9833, 36.95],
+      "address": "Pothia, Kalymnos 852 00, Greece"
+    },
+    "ratingsAverage": 3.9,
+    "ratingsQuantity": 7,
+    "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
+    "startDates": [
+      "2025-10-19T09:00:00.000Z",
+      "2025-12-06T09:00:00.000Z",
+      "2026-03-18T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2966",
+    "name": "Dodecanese Adventure Seeker",
+    "duration": 14,
+    "maxGroupSize": 8,
+    "difficulty": "difficult",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a1f292f8fb814b56fa184",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
+    "price": 2997,
+    "summary": "Climbing, diving, windsurfing, and more in the Dodecanese islands",
+    "description": "Unleash your adventurous spirit in the Dodecanese. Rock climb in Kalymnos' world-famous crags, dive in crystal-clear waters, windsurf in Kos, and hike volcanic landscapes. This multi-sport tour includes professional instruction, equipment, and transfers between islands. Experience Greece's diverse adventure offerings, from sea to summit, with time for relaxation on pristine beaches.",
+    "imageCover": "tour-6-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296b",
+        "description": "Kalymnos Climbing Areas",
+        "type": "Point",
+        "coordinates": [26.95, 36.98],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296a",
+        "description": "Kos Windsurfing Spots",
+        "type": "Point",
+        "coordinates": [27.28, 36.89],
+        "day": 4
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2969",
+        "description": "Leros Diving Sites",
+        "type": "Point",
+        "coordinates": [26.85, 37.13],
+        "day": 6
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2968",
+        "description": "Patmos Hiking Trails",
+        "type": "Point",
+        "coordinates": [26.54, 37.31],
+        "day": 7
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2967",
+        "description": "Rhodes Adventure Park",
+        "type": "Point",
+        "coordinates": [28.21, 36.44],
+        "day": 10
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Crete, Greece",
+      "type": "Point",
+      "coordinates": [24.809269, 35.240117],
+      "address": "Heraklion 712 02, Greece"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6,
+    "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"],
+    "startDates": [
+      "2025-09-23T10:00:00.000Z",
+      "2025-12-25T09:00:00.000Z",
+      "2026-02-30T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2970",
+    "name": "Crete Star Gazer",
+    "duration": 9,
+    "maxGroupSize": 8,
+    "difficulty": "medium",
+    "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
+    "price": 2997,
+    "summary": "The most remote and stunningly beautiful places in Crete for seeing the night sky",
+    "description": "Escape light pollution and discover Crete's dark skies. Visit remote mountain areas and beaches for guided stargazing sessions, learn constellations and Greek mythology. Use telescopes to observe planets and galaxies, with expert astronomers. This tour includes comfortable accommodations, transportation to prime viewing spots, and daytime explorations of Minoan sites.",
+    "imageCover": "tour-8-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2973",
+        "description": "Triopetra Beach",
+        "type": "Point",
+        "coordinates": [24.7667, 35.1167],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2972",
+        "description": "Psiloritis Mountain",
+        "type": "Point",
+        "coordinates": [24.77, 35.23],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2971",
+        "description": "White Mountains",
+        "type": "Point",
+        "coordinates": [23.9, 35.3],
+        "day": 6
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Crete, Greece",
+      "type": "Point",
+      "coordinates": [24.809269, 35.240117],
+      "address": "Chania 731 00, Greece"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 7,
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
+    "startDates": [
+      "2025-10-16T10:00:00.000Z",
+      "2026-01-16T10:00:00.000Z",
+      "2026-12-12T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2974",
+    "name": "Crete Night Sky Explorer",
+    "duration": 3,
+    "maxGroupSize": 12,
+    "difficulty": "easy",
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a23412f8fb814b56fa18c"
+    ],
+    "price": 1497,
+    "summary": "Enjoy the stunning night sky in one of the best places in Crete",
+    "description": "Experience Crete's exceptional dark skies for stargazing. Join guided tours to remote spots with minimal light pollution, observe constellations, and learn about astronomy. This short tour includes telescope sessions, mythology stories, and comfortable transfers. Perfect for a quick escape into the cosmos, with optional astrophotography tips.",
+    "imageCover": "tour-9-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2975",
+        "description": "Skinakas Observatory",
+        "type": "Point",
+        "coordinates": [24.9, 35.21],
+        "day": 1
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Nemea, Greece",
+      "type": "Point",
+      "coordinates": [22.667, 37.817],
+      "address": "Nemea 205 00, Greece"
+    },
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 7,
+    "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
+    "startDates": [
+      "2025-09-12T10:00:00.000Z",
+      "2025-11-14T09:00:00.000Z",
+      "2025-12-01T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c296c",
+    "name": "Nemea Wine Taster",
+    "duration": 5,
+    "maxGroupSize": 8,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 1997,
+    "summary": "Exquisite wines, scenic views, exclusive barrel tastings in Nemea",
+    "description": "Indulge in Greece's renowned wine region of Nemea. Visit family-owned vineyards, taste Agiorgitiko reds and other varieties, learn about ancient wine-making traditions. Enjoy guided tastings, paired lunches, and vineyard walks. This tour includes transportation from Athens, accommodations in charming wineries, and insights into Greek viticulture from local experts.",
+    "imageCover": "tour-7-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296f",
+        "description": "Skouras Winery",
+        "type": "Point",
+        "coordinates": [22.65, 37.82],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296e",
+        "description": "Lafkiotis Winery",
+        "type": "Point",
+        "coordinates": [22.67, 37.81],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296d",
+        "description": "Semeli Estate",
+        "type": "Point",
+        "coordinates": [22.7, 37.8],
+        "day": 5
+      }
+    ]
+  }
+]

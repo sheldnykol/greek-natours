@@ -1,0 +1,289 @@
+[
+  {
+    "_id": "5c8a34ed14eb5c17645c9108",
+    "review": "Absolutely breathtaking! The Cyclades islands were even more beautiful than I imagined. The boat trips between islands were smooth, and the hikes offered stunning views. Highly recommend for anyone wanting to experience Greek island life.",
+    "rating": 5,
+    "user": "5c8a1dfa2f8fb814b56fa181",
+    "tour": "5c88fa8cf4afda39709c2955"
+  },
+  {
+    "_id": "5c8a355b14eb5c17645c9109",
+    "review": "Parnassos was a winter wonderland! The skiing was great for intermediates, but beginners might find it challenging. The views of the sea from the slopes were unique. Equipment rental was easy, but bring warm clothes!",
+    "rating": 4,
+    "user": "5c8a1dfa2f8fb814b56fa181",
+    "tour": "5c88fa8cf4afda39709c295a"
+  },
+  {
+    "_id": "5c8a359914eb5c17645c910a",
+    "review": "Athens came alive on this tour. The Acropolis is a must-see, and the day trip to Sounion at sunset was magical. The guide's knowledge of history made everything fascinating. Comfortable pace for all ages.",
+    "rating": 5,
+    "user": "5c8a1dfa2f8fb814b56fa181",
+    "tour": "5c88fa8cf4afda39709c295d"
+  },
+  {
+    "_id": "5c8a35b614eb5c17645c910b",
+    "review": "Nemea's wines were exquisite! Tasting Agiorgitiko at family vineyards was a highlight. The tour included great food pairings, but the drive was a bit long. Perfect for wine lovers.",
+    "rating": 4,
+    "user": "5c8a1dfa2f8fb814b56fa181",
+    "tour": "5c88fa8cf4afda39709c296c"
+  },
+  {
+    "_id": "5c8a364c14eb5c17645c910c",
+    "review": "Crete's dark skies were perfect for stargazing. The telescope views of galaxies were amazing, and the mythology stories added a nice touch. Cozy accommodations, but pack for cool nights.",
+    "rating": 5,
+    "user": "5c8a1e1a2f8fb814b56fa182",
+    "tour": "5c88fa8cf4afda39709c296c"
+  },
+  {
+    "_id": "5c8a368c14eb5c17645c910d",
+    "review": "Crete's night sky was mesmerizing. The guide pointed out constellations linked to Greek myths. Dinner under the stars was romantic. Highly recommended for astronomy enthusiasts.",
+    "rating": 5,
+    "user": "5c8a1e1a2f8fb814b56fa182",
+    "tour": "5c88fa8cf4afda39709c2974"
+  },
+  {
+    "_id": "5c8a36a014eb5c17645c910e",
+    "review": "Crete's remote spots offered incredible stargazing. Saw the Milky Way clearly for the first time. The tour included comfortable transport and informative sessions. Worth every penny.",
+    "rating": 5,
+    "user": "5c8a1e1a2f8fb814b56fa182",
+    "tour": "5c88fa8cf4afda39709c2970"
+  },
+  {
+    "_id": "5c8a36b714eb5c17645c910f",
+    "review": "Cyclades hopping was a dream! Each island had its own charm. The group size was perfect, and the itinerary allowed time for relaxation. Boat rides were scenic but can be choppy.",
+    "rating": 4,
+    "user": "5c8a1e1a2f8fb814b56fa182",
+    "tour": "5c88fa8cf4afda39709c2955"
+  },
+  {
+    "_id": "5c8a379a14eb5c17645c9110",
+    "review": "Olympus hiking was invigorating! Trails were well-marked, views stunning. The mythology aspect added depth. Good for fit beginners, but some steep sections.",
+    "rating": 5,
+    "user": "5c8a24402f8fb814b56fa190",
+    "tour": "5c88fa8cf4afda39709c2951"
+  },
+  {
+    "_id": "5c8a37b114eb5c17645c9111",
+    "review": "Parnassos skiing was fun, but snow conditions vary. The sea view from slopes is unique. Instructors were helpful for snowboarders. Affordable day trip from Athens.",
+    "rating": 4,
+    "user": "5c8a24402f8fb814b56fa190",
+    "tour": "5c88fa8cf4afda39709c295a"
+  },
+  {
+    "_id": "5c8a37cb14eb5c17645c9112",
+    "review": "Epirus parks were breathtaking! Vikos Gorge hike was challenging but rewarding. Wildlife spotting and river crossings added excitement. Nature lovers' paradise.",
+    "rating": 5,
+    "user": "5c8a24402f8fb814b56fa190",
+    "tour": "5c88fa8cf4afda39709c2961"
+  },
+  {
+    "_id": "5c8a37dd14eb5c17645c9113",
+    "review": "Dodecanese adventures were thrilling! Climbing in Kalymnos was world-class, diving clear waters amazing. Windsurfing for all levels. Islands hopping was seamless.",
+    "rating": 4,
+    "user": "5c8a24402f8fb814b56fa190",
+    "tour": "5c88fa8cf4afda39709c2966"
+  },
+  {
+    "_id": "5c8a37f114eb5c17645c9114",
+    "review": "Crete night sky tour was magical. Clear views of stars, informative guide. The short duration was perfect for a weekend getaway. Highly recommended.",
+    "rating": 5,
+    "user": "5c8a24402f8fb814b56fa190",
+    "tour": "5c88fa8cf4afda39709c2974"
+  },
+  {
+    "_id": "5c8a381714eb5c17645c9115",
+    "review": "Olympus trails were beautiful. Easy hikes with great views. The refuges provided good food. Ideal for families or casual hikers.",
+    "rating": 5,
+    "user": "5c8a1ec62f8fb814b56fa183",
+    "tour": "5c88fa8cf4afda39709c2951"
+  },
+  {
+    "_id": "5c8a382d14eb5c17645c9116",
+    "review": "Parnassos was great for snowboarding. Modern lifts, varied slopes. The difficulty was just right for advanced riders. Close to Athens is a plus.",
+    "rating": 5,
+    "user": "5c8a1ec62f8fb814b56fa183",
+    "tour": "5c88fa8cf4afda39709c295a"
+  },
+  {
+    "_id": "5c8a384114eb5c17645c9117",
+    "review": "Epirus exploration was immersive. National parks offered diverse hikes. The gorge crossing was highlight. Guide was knowledgeable about flora and fauna.",
+    "rating": 5,
+    "user": "5c8a1ec62f8fb814b56fa183",
+    "tour": "5c88fa8cf4afda39709c2961"
+  },
+  {
+    "_id": "5c8a385614eb5c17645c9118",
+    "review": "Athens tour was comprehensive. Acropolis history was fascinating, Sounion sunset beautiful. Easy walking, suitable for all. More time at Delphi would be nice.",
+    "rating": 5,
+    "user": "5c8a1ec62f8fb814b56fa183",
+    "tour": "5c88fa8cf4afda39709c295d"
+  },
+  {
+    "_id": "5c8a387214eb5c17645c9119",
+    "review": "Nemea wines were delightful. Vineyard tours informative, tastings generous. The ancient site visit added cultural value. Relaxing day out.",
+    "rating": 5,
+    "user": "5c8a1ec62f8fb814b56fa183",
+    "tour": "5c88fa8cf4afda39709c296c"
+  },
+  {
+    "_id": "5c8a38ac14eb5c17645c911a",
+    "review": "Crete stargazing was enchanting. Remote locations provided clear views. The mythology integration was unique. Comfortable setup, knowledgeable astronomer.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c296c"
+  },
+  {
+    "_id": "5c8a38c714eb5c17645c911b",
+    "review": "Crete star gazing was serene. Saw shooting stars and planets. The tour length allowed for deep immersion. Bring binoculars for better experience.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c2970"
+  },
+  {
+    "_id": "5c8a38da14eb5c17645c911c",
+    "review": "Dodecanese adventures were exhilarating. Climbing walls challenging, diving sites vibrant. Windsurfing lessons excellent. Island variety kept it exciting.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c2966"
+  },
+  {
+    "_id": "5c8a38ed14eb5c17645c911d",
+    "review": "Athens explorer was educational. Urban walks revealed hidden gems. The guide's stories brought history alive. Comfortable pace, great for photographers.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c295d"
+  },
+  {
+    "_id": "5c8a390d14eb5c17645c911e",
+    "review": "Olympus hike was refreshing. Easy trails with mythical vibes. The group was friendly, guide informative. Perfect for a short nature escape.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c2951"
+  },
+  {
+    "_id": "5c8a391f14eb5c17645c911f",
+    "review": "Cyclades tour was picturesque. Island hopping seamless, hikes rewarding. Food and beaches were highlights. Boat motion might bother some.",
+    "rating": 5,
+    "user": "5c8a211f2f8fb814b56fa188",
+    "tour": "5c88fa8cf4afda39709c2955"
+  },
+  {
+    "_id": "5c8a395b14eb5c17645c9120",
+    "review": "Olympus was majestic. The paths were well-maintained, views epic. Suitable for casual hikers. Bring water and snacks.",
+    "rating": 5,
+    "user": "5c8a20d32f8fb814b56fa187",
+    "tour": "5c88fa8cf4afda39709c2951"
+  },
+  {
+    "_id": "5c8a399014eb5c17645c9121",
+    "review": "Athens tour was insightful. Acropolis impressive, Sounion temple stunning at sunset. The difficulty was low, but lots of walking.",
+    "rating": 4,
+    "user": "5c8a20d32f8fb814b56fa187",
+    "tour": "5c88fa8cf4afda39709c295d"
+  },
+  {
+    "_id": "5c8a39a214eb5c17645c9122",
+    "review": "Crete stargazing was peaceful. Dark skies revealed countless stars. The guide's astronomy knowledge was impressive. Ideal for couples.",
+    "rating": 5,
+    "user": "5c8a20d32f8fb814b56fa187",
+    "tour": "5c88fa8cf4afda39709c2970"
+  },
+  {
+    "_id": "5c8a39b614eb5c17645c9123",
+    "review": "Crete night sky was okay, but light pollution in some spots. The tour was short, good for beginners. Could use more telescope time.",
+    "rating": 3,
+    "user": "5c8a20d32f8fb814b56fa187",
+    "tour": "5c88fa8cf4afda39709c2974"
+  },
+  {
+    "_id": "5c8a3a7014eb5c17645c9124",
+    "review": "Cyclades was idyllic. Each island unique, hikes scenic. The group dynamics were great. Weather can be unpredictable, pack accordingly.",
+    "rating": 5,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c2955"
+  },
+  {
+    "_id": "5c8a3a8d14eb5c17645c9125",
+    "review": "Olympus hiking was soul-stirring. Ancient paths felt magical. The refuges were cozy. Highly recommend for history buffs.",
+    "rating": 5,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c2951"
+  },
+  {
+    "_id": "5c8a3a9914eb5c17645c9126",
+    "review": "Parnassos snow adventure was thrilling. Slopes varied, instructors patient. The sea view added a Greek twist to skiing.",
+    "rating": 5,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c295a"
+  },
+  {
+    "_id": "5c8a3aaa14eb5c17645c9127",
+    "review": "Epirus parks were wild and beautiful. The gorge hike was intense but worth it. Wildlife sightings were bonus. Prepare for uneven terrain.",
+    "rating": 4,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c2961"
+  },
+  {
+    "_id": "5c8a3abc14eb5c17645c9128",
+    "review": "Dodecanese was action-packed. Climbing exhilarating, diving colorful. The difficulty was high, but guides ensured safety.",
+    "rating": 4,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c2966"
+  },
+  {
+    "_id": "5c8a3acf14eb5c17645c9129",
+    "review": "Crete star gazing was awe-inspiring. Mountain locations provided dark skies. The tour combined astronomy with Cretan hospitality.",
+    "rating": 5,
+    "user": "5c8a23c82f8fb814b56fa18d",
+    "tour": "5c88fa8cf4afda39709c2970"
+  },
+  {
+    "_id": "5c8a3b1e14eb5c17645c912a",
+    "review": "Crete wine tasting was flavorful. Vineyards scenic, tastings educational. The ancient Minoan sites added historical context.",
+    "rating": 5,
+    "user": "5c8a23de2f8fb814b56fa18e",
+    "tour": "5c88fa8cf4afda39709c296c"
+  },
+  {
+    "_id": "5c8a3b3214eb5c17645c912b",
+    "review": "Crete night sky was stunning. The observatory visit was highlight. Short duration made it accessible. Great for all ages.",
+    "rating": 5,
+    "user": "5c8a23de2f8fb814b56fa18e",
+    "tour": "5c88fa8cf4afda39709c2974"
+  },
+  {
+    "_id": "5c8a3b4714eb5c17645c912c",
+    "review": "Dodecanese adventures were demanding. Windsurfing fun, but climbing tough for beginners. Islands beautiful, but pack energy snacks.",
+    "rating": 1,
+    "user": "5c8a23de2f8fb814b56fa18e",
+    "tour": "5c88fa8cf4afda39709c2966"
+  },
+  {
+    "_id": "5c8a3b6714eb5c17645c912e",
+    "review": "Athens explorer was captivating. Urban and historical blend perfect. The guide's enthusiasm made the long walks enjoyable.",
+    "rating": 5,
+    "user": "5c8a23de2f8fb814b56fa18e",
+    "tour": "5c88fa8cf4afda39709c295d"
+  },
+  {
+    "_id": "5c8a3b7c14eb5c17645c912f",
+    "review": "Cyclades was relaxing yet adventurous. Island variety kept it interesting. The hikes were mild, beaches pristine.",
+    "rating": 5,
+    "user": "5c8a23de2f8fb814b56fa18e",
+    "tour": "5c88fa8cf4afda39709c2955"
+  },
+  {
+    "_id": "5c8a3b9f14eb5c17645c9130",
+    "review": "Parnassos was exhilarating. Snowboarding on varied terrain. The Greek twist with nearby archaeological sites was unique.",
+    "rating": 5,
+    "user": "5c8a24282f8fb814b56fa18f",
+    "tour": "5c88fa8cf4afda39709c295a"
+  },
+  {
+    "_id": "5c8a3bc414eb5c17645c9131",
+    "review": "Epirus parks were pristine. The nature immersion was complete. Hikes challenging, but the scenery compensated.",
+    "rating": 5,
+    "user": "5c8a24282f8fb814b56fa18f",
+    "tour": "5c88fa8cf4afda39709c2961"
+  }
+]

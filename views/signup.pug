@@ -1,0 +1,26 @@
+extends base
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Sign Up
+      form.form.form--signup
+        .form__group
+          label.form__label(for='name') Name
+          input#name.form__input(type='text', placeholder='Your Name', required, minlength='2', maxlength='50', pattern='[A-Za-z\\s-]{2,50}')
+        .form__group
+          label.form__label(for='email') Email address
+          input#email.form__input(type='email', placeholder='you@example.com', required, maxlength='100')
+        .form__group
+          label.form__label(for='password') Password
+          input#password.form__input(type='password', placeholder='••••••••', required, minlength='8', maxlength='50', pattern='(?=.*[A-Z]).{8,50}')
+          p.form__hint(style='font-size: 0.9rem; color: #555; margin-top: 5px;') Must contain at least 8 characters and one uppercase letter
+        .form__group
+          label.form__label(for='passwordConfirm') Confirm Password
+          input#passwordConfirm.form__input(type='password', placeholder='••••••••', required, minlength='8', maxlength='50')
+        .form__group
+          button.btn.btn--blue(type='submit') Sign Up
+      if error
+        p.error #{error}
+      if success
+        p.success #{success}

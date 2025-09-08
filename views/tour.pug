@@ -1,0 +1,111 @@
+extends base
+include _reviewCard
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet')
+
+mixin overviewBox(label, text, icon)
+  .overview-box__detail
+    svg.overview-box__icon
+      use(xlink:href=`/img/icons.svg#icon-${icon}`)
+    span.overview-box__label= label
+    span.overview-box__text= text
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${tour.name} `
+
+
+  section.section-description
+    .overview-box
+      div
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Quick facts
+          .heading-box__detail
+           svg.heading-box__icon
+            use(xlink:href='/img/icons.svg#icon-clock')
+           span.heading-box__text= `${tour.duration} days Duration`
+  
+          br
+          each startDate, index in tour && tour.startDates ? tour.startDates : []
+            - const formattedDate = startDate ? new Date(startDate).toLocaleString('en-us', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : 'Date not available'
+            +overviewBox(` Date ${index + 1}`, formattedDate, 'calendar')
+         
+          //- #calendar
+          //- // Embed tour data as JSON
+          //- script#tour-data(type='application/json').
+          //-   !{JSON.stringify({ name: tour.name, startDates: tour.startDates, duration: tour.duration })}
+          +overviewBox('Difficulty', tour.difficulty, 'trending-up')
+          +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
+          +overviewBox('Rating', `${tour.ratingsAverage} / 5`, 'star')
+
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Your tour guides
+
+          each guide in tour.guides
+            .overview-box__detail
+              img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+
+              - if (guide.role === 'lead-guide')
+                span.overview-box__label Lead guide
+              - if (guide.role === 'guide')
+                span.overview-box__label Tour guide
+              span.overview-box__text= guide.name
+
+    .description-box
+      h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour`
+      - const parapraphs = tour.description.split('\n');
+      each p in parapraphs
+        p.description__text= p
+      #calendar
+          // Embed tour data as JSON
+      script#tour-data(type='application/json').
+        !{JSON.stringify({ name: tour.name, startDates: tour.startDates, duration: tour.duration })}
+
+  section.section-pictures
+    each img, i in tour.images
+      .picture-box
+        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+
+  section.section-map
+    #map(data-locations=`${JSON.stringify(tour.locations)}`)
+
+  section.section-reviews
+    .reviews
+      each review in tour.reviews
+        +reviewCard(review)
+
+  section.section-cta
+    .cta
+      .cta__img.cta__img--logo
+        img(src='/img/background.png', alt='Natours logo')
+      img.cta__img.cta__img--1(src=`/img/tours/${tour.images[1]}`, alt='Tour picture')
+      img.cta__img.cta__img--2(src=`/img/tours/${tour.images[2]}`, alt='Tour picture')
+      .cta__content
+        h2.heading-secondary What are you waiting for?
+        p.cta__text= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
+        p.cta__price= `$${tour.price} per person`
+        
+        if user
+          form.date-form
+            input#tour(type='hidden' name='tour' value=tour.id)
+            input#user(type='hidden' name='user' value=user.id)
+            .form__group
+              label.form__label(for=`startDate-${tour.id}`) Choose a date
+              select.form__input#startDate(name='startDate' required)
+                option(value='' disabled selected) Select a date
+                each date in tour.startDates
+                  - const formattedDate = new Date(date).toLocaleString('en-us', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+                  option(value=date)= formattedDate
+            .form__group
+              button#bookBtn.btn.btn--blue.date-submit(type='submit') Book Now
+        else
+          a.btn.btn--blue.span-all-rows(href='/login') Log in to book your next trip
+    script(src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.5/main.min.js')        

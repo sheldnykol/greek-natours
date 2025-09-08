@@ -1,0 +1,154 @@
+extends base
+
+mixin navItem(link, text, icon, active)
+  li(class=`${active ? 'side-nav--active' : ''}`)
+    a(href=`${link}` data-view=`${text.toLowerCase().replace(' ', '-')}`)
+      svg
+        use(xlink:href=`img/icons.svg#icon-${icon}`)
+      | #{text}
+
+block content
+  main.main
+    .user-view
+      nav.user-view__menu
+        ul.side-nav
+          +navItem('/me', 'Settings', 'settings', view === 'settings' || !view)
+          +navItem('/my-tours', 'My bookings', 'briefcase', view === 'my-bookings')
+          +navItem('/my-reviews', 'My reviews', 'star', view === 'my-reviews')
+          +navItem('#', 'Billing', 'credit-card', view === 'billing')
+
+        - if (user.role === 'admin')
+          .admin-nav
+            h5.admin-nav__heading Admin
+            ul.side-nav
+              +navItem('#', 'Manage tours', 'map', view === 'manage-tours')
+              +navItem('#', 'Manage users', 'users', view === 'manage-users')
+              +navItem('#', 'Manage reviews', 'star', view === 'manage-reviews')
+              +navItem('#', 'Manage bookings', 'briefcase', view === 'manage-bookings')
+
+      .user-view__content
+        if view === 'my-bookings'
+          .user-view__form-container
+            h2.heading-secondary.ma-bt-md My Bookings
+            .card-container-tour           
+              each tour in tours
+                br
+                .card
+                  .card__header
+                    .card__picture
+                      .card__picture-overlay &nbsp;
+                      img.card__picture-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+                    h3.heading-tertirary
+                      span= tour.name
+                  .card__details
+                    h4.card__sub-heading= `${tour.difficulty} ${tour.duration}-day tour`
+                    p.card__text= tour.summary
+                    .card__data
+                      svg.card__icon
+                        use(xlink:href='/img/icons.svg#icon-map-pin')
+                      span= tour.startLocation.description
+                    .card__data
+                      svg.card__icon
+                        use(xlink:href='/img/icons.svg#icon-calendar')
+                      span= tour.startDate ? tour.startDate.toLocaleString('en-us', {day:'numeric', month: 'long', year: 'numeric' }) : 'Not specified'                    
+                    .card__data
+                      svg.card__icon
+                        use(xlink:href='/img/icons.svg#icon-flag')
+                      span= `${tour.locations.length} stops`
+                    .card__data
+                      svg.card__icon
+                        use(xlink:href='/img/icons.svg#icon-user')
+                      span= `${tour.maxGroupSize} people`
+                  .card__footer__review
+                    h2.heading-secondary.ma-bt-md Leave a Review Here
+                    form.rating-form
+                      input#tour(type='hidden' name='tour' value=tour.id)
+                      input#user(type='hidden' name='user' value=user.id)
+                      h3.heading-tertiary Rate :
+                      .rating
+                        each star in [5, 4, 3, 2, 1]
+                          input.rating__input(type='radio' name='rating' id=`star${star}-${tour.id}` value=star required)
+                          label.rating__label(for=`star${star}-${tour.id}`)
+                            svg.rating__star
+                              use(xlink:href='/img/icons.svg#icon-star')
+                      .form__group
+                        br
+                        label.form__label(for=`review-${tour.id}`) Review :
+                        textarea#review.form__input(name='review' placeholder='Write your review here...' rows='4' required)
+                      .form__group
+                        button.btn.btn--blue(type='submit') Submit Rating
+                    a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Tour Details
+                
+        
+
+        else if view === 'my-reviews'
+          .user-view__form-container
+            h2.heading-secondary.ma-bt-md My Reviews
+            .card-container-tour
+              each review in reviews
+                br
+                .card
+                  .card__header
+                    .card__picture
+                      .card__picture-overlay &nbsp;
+                      img.card__picture-img(src=`/img/tours/${review.tour.imageCover}`, alt=`${review.tour.name}`)
+                    h3.heading-tertirary
+                      span= review.tour.name
+                  .card__details
+                    form.edit-review-form
+                      input(type='hidden' name='tour' value=review.tour.id)
+                      input(type='hidden' name='user' value=user.id)
+                      input(type='hidden' name='review' value=review.reviewId)
+                      h3.heading-tertiary Rating:
+                      .rating
+                        each star in [5, 4, 3, 2, 1]
+                          input.rating__input(type='radio' name='rating' id=`star${star}-${review.reviewId}` value=star required checked=star===review.rating)
+                          label.rating__label(for=`star${star}-${review.reviewId}`)
+                            svg.rating__star
+                              use(xlink:href='/img/icons.svg#icon-star')
+                      .form__group
+                        br
+                        label.form__label(for=`review-${review.reviewId}`) Review:
+                        textarea#review.form__input(name='review' placeholder='Edit your review here...' rows='4' required)= review.reviewText
+                      .form__group
+                        button.btn.btn--blue(type='submit' name='action' value='save') Save Changes
+                      .form__group
+                        button.btn.btn--delete-review(type='submit' name='action' value='delete' data-review-id=review.reviewId style='background-color: #904640ff; color: #fff;') Delete Review
+
+
+
+
+
+        else
+          .user-view__form-container
+            h2.heading-secondary.ma-bt-md Your account settings
+            form.form.form-user-data
+              .form__group
+                label.form__label(for='name') Name
+                input#name.form__input(type='text', value=`${user.name}`, required, name='name', autocomplete='name')
+              .form__group.ma-bt-md
+                label.form__label(for='email') Email address
+                input#email.form__input(type='email', value=`${user.email}`, required, name='email', autocomplete='email')
+              .form__group.form__photo-upload
+                img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+                input.form__upload(type='file', accept='image/*', id='photo', name='photo')
+                label(for='photo') Choose new photo
+              .form__group.right
+                button.btn.btn--small.btn--green Save settings
+
+          .line &nbsp;
+
+          .user-view__form-container
+            h2.heading-secondary.ma-bt-md Password change
+            form.form.form-user-password
+              .form__group
+                label.form__label(for='password-current') Current password
+                input#password-current.form__input(type='password', placeholder='••••••••', required, minlength='8', autocomplete='current-password')
+              .form__group
+                label.form__label(for='password') New password
+                input#password.form__input(type='password', placeholder='••••••••', required, minlength='8', autocomplete='new-password')
+              .form__group.ma-bt-lg
+                label.form__label(for='password-confirm') Confirm password
+                input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8', autocomplete='new-password')
+              .form__group.right
+                button.btn.btn--small.btn--green.btn--save-password Save password

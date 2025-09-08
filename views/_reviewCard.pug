@@ -1,0 +1,10 @@
+mixin reviewCard(review)
+  .reviews__card
+    .reviews__avatar
+      img.reviews__avatar-img(src=`/img/users/${review.user.photo}`, alt=`${review.user.name}`)
+      h6.reviews__user= review.user.name
+    p.reviews__text= review.review
+    .reviews__rating
+      .reviews__rating-bar
+        .reviews__rating-fill(style=`width: ${(review.rating / 5) * 100}%`)
+      span.reviews__rating-text= `${review.rating}/5`
