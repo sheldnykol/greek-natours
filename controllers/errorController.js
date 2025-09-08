@@ -2,7 +2,7 @@ const AppError = require('./../utils/appError');
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
-  console.log('Message in handleCasrErrorDb');
+  //console.log('Message in handleCasrErrorDb');
   return new AppError(message, 400); //400 =  bad request
 
   // /CastError: Π.χ. λανθασμένο ID στο /api/v1/tours/fdffreg.
@@ -10,7 +10,7 @@ const handleCastErrorDB = (err) => {
 };
 const handleDublicateFieldsDB = (err) => {
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
-  console.log('err ermsg ==== > ', value);
+  //console.log('err ermsg ==== > ', value);
   const message = `Dublicate Field Value: ${value} Please use another value!`; //twra apo to err tha parw to errmsg suge=kekrimena to name of tour
   //google search regular epressjon match text bettween ' '
   return new AppError(message, 400);
@@ -71,7 +71,7 @@ const sendErrorProd = (err, req, res) => {
       });
     }
     // Προγραμματιστικό σφάλμα για API
-    console.error('ERROR', err);
+    //console.error('ERROR', err);
     return res.status(500).json({
       status: 'error',
       message: 'Something went wrong',
@@ -87,7 +87,7 @@ const sendErrorProd = (err, req, res) => {
   }
 
   // Προγραμματιστικό σφάλμα για non-API (render Pug template)
-  console.error('ERROR', err);
+  //console.error('ERROR', err);
   return res.status(500).render('error', {
     title: 'Something went wrong!',
     msg: 'Please try again later.',
@@ -96,7 +96,7 @@ const sendErrorProd = (err, req, res) => {
 
 module.exports = (err, req, res, next) => {
   //   console.log(err.stack);
-  console.log('NODE_ENV:', process.env.NODE_ENV);
+  //console.log('NODE_ENV:', process.env.NODE_ENV);
   err.statusCode = err.statusCode || 500; //500 error  404 fail
   err.status = err.status || 'error';
 
@@ -104,10 +104,10 @@ module.exports = (err, req, res, next) => {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
     let error = Object.assign(err);
-    console.log(err);
+    //console.log(err);
 
     //let error = { ...err }; // kati san copy toy err
-    console.log('error name : ', error.name);
+    //console.log('error name : ', error.name);
     if (error.name === 'CastError') error = handleCastErrorDB(error); //tha perasoume to error mesa se authn to function
     if (error.code === 11000) error = handleDublicateFieldsDB(error);
     if (error.name === 'ValidationError')

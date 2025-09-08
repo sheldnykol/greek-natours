@@ -25,7 +25,7 @@ export const hideAlert = () => {
 
 // type is 'success' or 'error'
 export const showAlert = (type, msg) => {
-  console.log('showAlert called:', type, msg); // Log για debugging
+  //console.log('showAlert called:', type, msg); // Log για debugging
   hideAlert();
   if (msg.includes('not logged in') || msg.includes('Invalid token')) {
     window.setTimeout(() => {

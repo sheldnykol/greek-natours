@@ -10,12 +10,12 @@ process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! Shutting down..');
   console.log(
     'olo to err : ',
-    util.inspect(err, { showHidden: true, depth: null })
+    util.inspect(err, { showHidden: true, depth: null }),
   );
   console.log(err.name, err.message);
-  // server.close(() => {
-  process.exit(1);
-  // });
+  server.close(() => {
+    process.exit(1);
+  });
 });
 
 // Load environment variables from config.env
@@ -24,13 +24,13 @@ dotenv.config({ path: './config.env' });
 // Replace password placeholder in DB URI
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
+  process.env.DATABASE_PASSWORD,
 );
 
 // Connect to MongoDB
 mongoose.connect(DB).then(() => {
   console.log('Connected to MongoDB');
-  // catch(err => console.log('ERROR'));
+  //catch(err => console.log('ERROR'));
 });
 // .catch((error) => {
 //   console.error('Error connecting to MongoDB:', error);

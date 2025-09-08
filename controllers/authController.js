@@ -312,7 +312,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     req.body,
   );
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log('url : ', url);
+  //console.log('url : ', url);
   await new Email(newUser, url).sendWelcome();
   createSendToken(newUser, 201, res);
 });
@@ -340,7 +340,7 @@ exports.logout = (req, res) => {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
   });
-  console.log(req.cookies); // Εμφανίζει τα cookies του request
+  //console.log(req.cookies); // Εμφανίζει τα cookies του request
   //console.log(res.get('Set-Cookie')); // Εμφανίζει τα cookies που στέλνονται στην απόκριση
   res.status(200).json({ status: 'success' });
 };
@@ -430,17 +430,17 @@ exports.isLoggedIn = async (req, res, next) => {
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
     // roles ['admin', 'lead-guide']. role='user'
-    console.log('roles', ...roles);
+    //console.log('roles', ...roles);
 
     // Check if req.user exists and has a role property
     if (!req.user || !req.user.role) {
-      console.log('Cannot read user role');
+      //console.log('Cannot read user role');
       return next(
         new AppError('You do not have permission to perform this action', 403),
       );
     }
 
-    console.log('role', req.user.role);
+    //console.log('role', req.user.role);
 
     if (!roles.includes(req.user.role)) {
       return next(
@@ -477,8 +477,8 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
       ? `${baseURL}/resetPassword/${resetToken}`
       : `${baseURL}/api/v1/users/resetPassword/${resetToken}`;
 
-  console.log('baseUrl : ', baseURL);
-  console.log('ResetUrl : ', resetURL);
+  //console.log('baseUrl : ', baseURL);
+  //console.log('ResetUrl : ', resetURL);
   try {
     // await sendEmail({
     //   email: user.email,
@@ -505,7 +505,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
   // 1) Get user based on the token
-  console.log('req.params', req.params);
+  //console.log('req.params', req.params);
   const hashedToken = crypto
     .createHash('sha256')
     .update(req.params.token)

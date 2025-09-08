@@ -5,7 +5,7 @@ export const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:3000/api/v1/users/login',
+      url: '/api/v1/users/login',
       data: {
         email,
         password,
@@ -27,7 +27,7 @@ export const logout = async () => {
   try {
     const res = await axios({
       method: 'GET',
-      url: 'http://127.0.0.1:3000/api/v1/users/logout',
+      url: '/api/v1/users/logout',
     });
     if (res.data.status === 'success') {
       showAlert('success', 'You are now logged out !');
@@ -37,7 +37,7 @@ export const logout = async () => {
     }
     // Ανακατεύθυνση χωρίς καθυστέρηση
   } catch (err) {
-    console.log('TO ERROR : ', err.response);
+    //console.log('TO ERROR : ', err.response);
     showAlert('error', 'Error logging out! Try again.');
   }
 };
@@ -46,7 +46,7 @@ export const signUp = async (name, email, password, passwordConfirm) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:3000/api/v1/users/signup',
+      url: '/api/v1/users/signup',
       data: {
         name,
         email,
@@ -54,7 +54,7 @@ export const signUp = async (name, email, password, passwordConfirm) => {
         passwordConfirm,
       },
     });
-    console.log('res.data.status', res.data.status);
+    // console.log('res.data.status', res.data.status);
     if (res.data.status === 'success') {
       showAlert('success', 'Sign up in successfully!');
       window.setTimeout(() => {

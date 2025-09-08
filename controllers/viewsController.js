@@ -108,7 +108,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
     };
   });
 
-  console.log('Tours with startDate:', toursWithStartDate);
+  //console.log('Tours with startDate:', toursWithStartDate);
 
   res.status(200).render('account', {
     title: 'My Bookings',
@@ -138,7 +138,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 exports.PatchReview = catchAsync(async (req, res, next) => {
   const reviews = await Review.find({ user: req.user.id }).populate('tour');
   // 1. Βρίσκεις όλα τα ratings/reviews για τον χρήστh
-  console.log('all review from a user ', reviews);
+  //console.log('all review from a user ', reviews);
   // 2. Κανω map για να εξαγω το tour id , review text , rating
   const mappedReviews = reviews.map((review) => ({
     reviewText: review.review,
@@ -151,7 +151,7 @@ exports.PatchReview = catchAsync(async (req, res, next) => {
       slug: review.tour.slug,
     },
   }));
-  console.log('mappedReviews', mappedReviews);
+  //.log('mappedReviews', mappedReviews);
 
   res.status(200).render('account', {
     title: 'My Reviews',

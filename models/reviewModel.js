@@ -37,7 +37,7 @@ const reviewSchema = new mongoose.Schema(
   {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }, //otan exoyme ena pedio poy den exei ineis stored sthn database na emfanizete kathe for sto output
-  }
+  },
 );
 
 reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
@@ -73,7 +73,7 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
       },
     },
   ]);
-  console.log(stats); //this einai to model kai kaloyme to aggregate panta sto model
+  //console.log(stats); //this einai to model kai kaloyme to aggregate panta sto model
   const Tour = mongoose.model('Tour');
   if (stats.length > 0) {
     //elegxoyme edw !!! alliws error
@@ -99,7 +99,7 @@ reviewSchema.post('save', function () {
 // findByIdAndDelete
 reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.review = await this.clone().findOne(); // Χρησιμοποιούμε clone() για να αποφύγουμε το σφάλμα
-  console.log(this.review); //PRIN ALLAXEI TO RATING PRIN GINE IUPDATE EMFANIZEI TO PALIO RATING
+  //console.log(this.review); //PRIN ALLAXEI TO RATING PRIN GINE IUPDATE EMFANIZEI TO PALIO RATING
   next();
 });
 reviewSchema.post(/^findOneAnd/, async function () {

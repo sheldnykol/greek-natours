@@ -8,7 +8,7 @@ class APIFeatures {
     // 1) Filtering
     const queryObj = { ...this.queryString }; // query parameters από το URL { duration: '5', sort: 'price' }
 
-    console.log('query parameters απο URL ', queryObj);
+    //console.log('query parameters απο URL ', queryObj);
 
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     //afairoume ta excluedfields apo to queryObj
@@ -19,7 +19,7 @@ class APIFeatures {
     // 2) Advanced Filtering
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-    console.log('Query  after replace : ', JSON.parse(queryStr));
+    //console.log('Query  after replace : ', JSON.parse(queryStr));
     this.query.find(JSON.parse(queryStr));
 
     return this; //olo to object
@@ -51,7 +51,7 @@ class APIFeatures {
     //default 1
     const limit = this.queryString.limit * 1 || 100;
     const skip = (page - 1) * limit;
-    console.log(skip); //posa tours exeis perasei px sthn deuyter
+    // console.log(skip); //posa tours exeis perasei px sthn deuyter
     // page=1&limit=3 skip = 0 , page=2&limit=3 skip = 3
     this.query = this.query.skip(skip).limit(limit);
 

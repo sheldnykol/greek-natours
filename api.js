@@ -12,6 +12,7 @@ const bookingRouter = require('./routes/bookingRoutes');
 // const helmet = require('helmet');
 //const mongoSanitize = require('express-mongo-sanitize');
 // const xss = require('xss-clean');
+const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const app = express();
 const viewRouter = require('./routes/viewRoutes');
@@ -65,7 +66,7 @@ app.use(cookieParser());
 // app.use(xss());
 app.use(express.static(`${__dirname}/public`));
 ///Σερβίρει στατικά αρχεία (π.χ. εικόνες, CSS) από τον φάκελο public.
-
+app.use(compression()); //kanei compress ta text
 //Test middllewere
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
