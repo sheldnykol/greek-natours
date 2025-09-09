@@ -190,6 +190,19 @@ body {
   );
   border-radius: var(--radius-sm);
 }
+.heading-tertirary a {
+  padding: 0.8rem 1.2rem;
+  line-height: 1.1;
+  box-decoration-break: clone;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(56, 189, 248, 0.9),
+    rgba(30, 64, 175, 0.9)
+  );
+  border-radius: var(--radius-sm);
+  color: rgb(244, 235, 235);
+  text-decoration: none !important;
+}
 
 .heading-primary {
   font-size: 5rem;
