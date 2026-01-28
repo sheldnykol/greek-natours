@@ -1,0 +1,30 @@
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.main {
+  padding: 6rem 3rem;
+  flex: 1;
+  position: relative;
+}
+
+.flex { display: flex; }
+.span-all-rows { grid-row: 1 / -1; }
+.ma-bt-md { margin-bottom: 2rem !important; }
+.ma-bt-lg { margin-bottom: 3rem !important; }
+.right { text-align: right !important; }
+.line {
+  margin: 4rem 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-grey-light);
+}
+
+@media only screen and (max-width: 50em) {
+  .container { padding: 0 1.5rem; }
+}
+@media only screen and (max-width: 37.5em) {
+  .main { padding: 4rem 1.5rem; }
+}

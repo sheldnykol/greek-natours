@@ -1,0 +1,60 @@
+.heading-secondary {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.heading-secondary--error {
+  background-image: linear-gradient(to right, var(--color-error), #dc2626);
+  font-size: 3.5rem;
+}
+
+.heading-primary, .heading-tertirary {
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heading-primary span, .heading-tertirary span {
+  padding: 0.8rem 1.2rem;
+  line-height: 1.1;
+  box-decoration-break: clone;
+  background-image: linear-gradient(to bottom right, rgba(56, 189, 248, 0.9), rgba(30, 64, 175, 0.9));
+  border-radius: var(--radius-sm);
+}
+
+.heading-primary {
+  font-size: 5rem;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.heading-tertirary {
+  font-size: 2.5rem;
+  text-align: right;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 70%;
+  z-index: 10;
+}
+
+.heading-tertirary a {
+  color: rgb(244, 235, 235);
+  text-decoration: none !important;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .heading-secondary { font-size: 2.2rem; }
+  .heading-secondary--error { font-size: 2.8rem; }
+  .heading-primary { font-size: 3.5rem; width: 90%; }
+  .heading-tertirary { font-size: 2rem; width: 90%; }
+}

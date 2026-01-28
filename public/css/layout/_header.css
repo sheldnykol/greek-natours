@@ -1,0 +1,196 @@
+header.header {
+  height: 8rem;
+  background-color:#2596c6;
+  backdrop-filter: blur(6px);
+  padding: 0 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+.header__overlay.nav--open {
+  display: block;
+}
+
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__logo img {
+  height: 3.8rem;
+}
+
+
+.header__tagline {
+  margin: 0;
+ 
+}
+
+.header__tagline-link:link,
+.header__tagline-link:visited {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+
+
+.header__tagline-link:hover {
+  color: var(--color-primary);
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav--tours {
+  flex: 0 1 40%;
+}
+
+.nav--user {
+  flex: 0 1 40%;
+  justify-content: flex-end;
+}
+
+.nav__el,
+.nav__el:link,
+.nav__el:visited {
+  color: #f7f7f7;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+  font-weight: 400;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.nav__el:hover,
+.nav__el:active {
+  transform: translateY(-1px);
+  opacity: 0.85;
+}
+
+
+.nav__el--cta {
+  padding: 1rem 3rem;
+  border-radius: 10rem;
+  background-color: var(--color-primary);
+  color: #fff !important;
+  border: none !important;
+  transition: background-color 0.3s;
+}
+
+.nav__el--cta:hover {
+  background-color: #55c57a;
+  color: #fff !important;
+}
+
+
+.nav__user-img {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.header__toggle {
+  display: none;
+}
+
+.nav__toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.nav__toggle-icon {
+  height: 3rem;
+  width: 3rem;
+  fill: #f7f7f7;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .header.header{
+    padding: 0 2rem;
+    justify-content: start;
+  }
+  .header__toggle {
+    display: block;
+  }
+
+  .nav--tours,
+  .nav--user {
+    display: none;
+  }
+
+  .header__brand {
+    position: static;
+    transform: none;
+    margin-left: 6px;
+    
+  }
+
+  .header__tagline-link:link {
+    
+    font-size: x-small;
+  }
+
+  .nav.nav--open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    width: 100%;
+    background-color: #104962;
+    z-index: 1000;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  }
+
+  .nav.nav--open .nav__el {
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

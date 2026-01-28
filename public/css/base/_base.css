@@ -1,0 +1,50 @@
+:root {
+  --section-rotate: 7vw;
+  /* Theme colors */
+  --color-primary: #38bdf8;
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #bae6fd;
+  --color-accent: #2dd4bf;
+  --color-accent-dark: #0d9488;
+  --color-error: #f87171;
+  --color-success: #22c55e;
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-light: #f1f5f9;
+  --color-grey: #6b7280;
+  --color-grey-dark: #374151;
+  --color-grey-light: #e5e7eb;
+  /* Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-grey-dark);
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  margin-top: 7rem;
+
+}
+
+::-moz-selection { background-color: var(--color-primary-light); color: var(--color-grey-dark); }
+::selection { background-color: var(--color-primary-light); color: var(--color-grey-dark); }

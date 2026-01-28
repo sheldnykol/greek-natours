@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import axios from 'axios';
-import { displayMap } from './mapbox';
+import { displayMap } from './leaflet';
 import { login, logout, signUp } from './login';
 import { updateSettings } from './updateSettings';
 import { forgetPassword } from './forgetPassword';
@@ -23,6 +23,12 @@ if (toggleBtn) {
       //console.log('Toggling nav:', nav);
     });
     overlay.classList.toggle('nav--open');
+  });
+}
+if (overlay) {
+  overlay.addEventListener('click', () => {
+    document.querySelectorAll('.nav').forEach((nav) => nav.classList.remove('nav--open'));
+    overlay.classList.remove('nav--open');
   });
 }
 
