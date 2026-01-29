@@ -17,11 +17,14 @@ module.exports = class Email {
       // Brevo (Production)
       return nodemailer.createTransport({
         host: 'smtp-relay.brevo.com',
-        port: 465, // Χρησιμοποιούμε 465 (SSL) που είναι πιο σταθερό στο Render
-        secure: true, 
+        port: 587, // Χρησιμοποιούμε 465 (SSL) που είναι πιο σταθερό στο Render
+        secure: false, 
         auth: {
           user: 'a120aa001@smtp-brevo.com', // Το Login ID της Brevo
           pass: process.env.BREVO_API_KEY,  // Το SMTP Key από το Dashboard
+        },
+        tls: {
+        rejectUnauthorized: false
         }
       });
     }
