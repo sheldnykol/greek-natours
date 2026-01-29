@@ -1,6 +1,7 @@
 :root {
   --section-rotate: 7vw;
   /* Theme colors */
+  --background-color: #2596c6;
   --color-primary: #38bdf8;
   --color-primary-dark: #1e40af;
   --color-primary-light: #bae6fd;

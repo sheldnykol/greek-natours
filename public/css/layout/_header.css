@@ -152,7 +152,8 @@ header.header {
 @media only screen and (max-width: 768px) {
   .header.header{
     padding: 0 2rem;
-    justify-content: start;
+    justify-content: flex-start;
+    gap: 1.7rem;
   }
   .header__toggle {
     display: block;
@@ -172,7 +173,7 @@ header.header {
 
   .header__tagline-link:link {
     
-    font-size: x-small;
+    font-size:small;
   }
 
   .nav.nav--open {

@@ -30,6 +30,55 @@
   text-transform: capitalize !important;
   letter-spacing: 0.5px;
 }
+/* Container για το ταμπελάκι */
+.map-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid var(--color-grey-light);
+  border-radius: 4px; /* Λιγότερο στρογγυλεμένο για πιο sharp look */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-decoration: none !important;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  width: 100px; /* Από 130px σε 100px */
+}
+
+.map-label-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Day label - Πιο λεπτό */
+.map-label-day {
+  background-color: var(--color-grey-dark);
+  color: white;
+  font-size: 0.8rem; /* Μικρότερο font */
+  font-weight: 800;
+  padding: 1px 4px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* Location Name - Πιο μαζεμένο */
+.map-label-name {
+  color: #000;
+  font-size: 1rem; /* Από 1.2rem σε 1rem */
+  font-weight: 600;
+  padding: 4px 6px;
+  text-align: center;
+  white-space: nowrap; /* Κρατάει το όνομα σε μια γραμμή */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Αν είναι τεράστιο το όνομα, βάζει ... */
+}
+
+/* Αφαίρεση του default styling του Leaflet DivIcon */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
 
 @media only screen and (max-width: 37.5em) {
   .section-map { height: 45rem; }
