@@ -16,8 +16,8 @@ console.log('Δοκιμή σύνδεσης με κλειδί:', process.env.BREV
 
 transporter.verify((error, success) => {
   if (error) {
-    console.log('❌ ΑΠΟΤΥΧΙΑ:', error.message);
+    console.log('❌ ΑΠΟΤΥΧΙΑ::', error.message);
   } else {
-    console.log('✅ ΕΠΙΤΥΧΙΑ: Η Brevo δέχτηκε τα στοιχεία σου!');
+    console.log('✅ ΕΠΙΤΥΧΙΑ: Η Brevo δέχτηκε τα στοιχεία σου!!!');
   }
 });
