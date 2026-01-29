@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+// dotenv.config({ path: './config.env' });
+const mongoose = require('mongoose');
 const util = require('util');
 const app = require('./api'); // Assuming you have an Express app in api.js
-
+const dns = require('node:dns');
+dns.setDefaultResultOrder('ipv4first');
 //den xreiazomaste ton server gia  na to trexoume auto
 //dioti auta ta sfalmata den tha sumbon asxyxrona ara den exoun kamia sxesh me ton diakomisth 1
 // //uncut exceptions  ola ta \

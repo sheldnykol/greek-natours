@@ -70,7 +70,7 @@ app.use(compression()); //kanei compress ta text
 //Test middllewere
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
+  //console.log(req.cookies);
   //console.log(req.headers); //stelnei mazi me thn aithsh toy user-agent ... host ,connection , postman-token..
   next();
 });

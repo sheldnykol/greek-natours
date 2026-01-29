@@ -302,18 +302,15 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const newUser = await User.create(
-    //{
-    // name: req.body.name,
-    // email: req.body.email,
-    // password: req.body.password,
-    // passwordConfirm: req.body.passwordConfirm,
-    // }
-    req.body,
-  );
+  const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get('host')}/me`;
-  //console.log('url : ', url);
-  await new Email(newUser, url).sendWelcome();
+  try{
+    await new Email(newUser, url).sendWelcome();
+  } catch (err) {
+    console.log('Email failed to send , but user was created successfully.!');
+    console.log(err);
+  }
+  
   createSendToken(newUser, 201, res);
 });
 
