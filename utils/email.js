@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const pug = require('pug');
 const { convert } = require('html-to-text');
 const path = require('path');
+const axios = require('axios'); // Μην ξεχάσεις: npm install axios
 
 module.exports = class Email {
   constructor(user, url) {
@@ -11,25 +12,8 @@ module.exports = class Email {
     this.from = `George Kolonas <${process.env.EMAIL_FROM}>`;
   }
 
+  // Αυτό θα δουλεύει ΜΟΝΟ για το Mailtrap (Development)
   newTransport() {
-    // Χρησιμοποιούμε .trim() γιατί στο Render καμιά φορά μπαίνουν κενά στα Env Variables
-    if (process.env.NODE_ENV?.trim() === 'production') {
-      // Brevo (Production)
-      return nodemailer.createTransport({
-        host: 'smtp-relay.brevo.com',
-        port: 2525, 
-        secure: false, 
-        auth: {
-          user: 'a120aa001@smtp-brevo.com', // Το Login ID της Brevo
-          pass: process.env.BREVO_API_KEY,  // Το SMTP Key από το Dashboard
-        },
-        tls: {
-        rejectUnauthorized: false
-        }
-      });
-    }
-
-    // Mailtrap (Development)
     return nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
@@ -40,39 +24,58 @@ module.exports = class Email {
     });
   }
 
-  // Στέλνει το πραγματικό email
   async send(template, subject) {
     try {
-      // 1) Ορισμός του σωστού path για το template (πιο ασφαλές για Render)
+      // 1) Render HTML από το Pug template
       const html = pug.renderFile(
-        path.join(__dirname, '..', 'views', 'email', `${template}.pug`), 
+        path.join(__dirname, '..', 'views', 'email', `${template}.pug`),
         {
           firstName: this.firstName,
           url: this.url,
-          subject
+          subject,
         }
       );
 
-      // 2) Email Options
-      const mailOptions = {
-        from: this.from,
-        to: this.to,
-        subject: subject,
-        html: html,
-        text: convert(html)
-      };
+      // 2) ΕΛΕΓΧΟΣ: Production (API) ή Development (Mailtrap)
+      if (process.env.NODE_ENV?.trim() === 'production') {
+        console.log('--- SENDING VIA BREVO API (HTTPS) ---');
 
-      // 3) Δημιουργία transport και αποστολή
-      const transport = this.newTransport();
-      await transport.sendMail(mailOptions);
-      
-      console.log(`✅ Email sent successfully to: ${this.to}`);
+        // Αποστολή μέσω HTTP POST - Παρακάμπτει τα μπλοκαρισμένα SMTP ports
+        await axios({
+          method: 'POST',
+          url: 'https://api.brevo.com/v3/smtp/email',
+          headers: {
+            'accept': 'application/json',
+            'api-key': process.env.BREVO_API_KEY, // Εδώ το xkeysib-... API KEY
+            'content-type': 'application/json',
+          },
+          data: {
+            sender: { name: 'George Kolonas', email: process.env.EMAIL_FROM },
+            to: [{ email: this.to }],
+            subject: subject,
+            htmlContent: html,
+          },
+        });
 
+        console.log(`🚀 API Success: Email sent to ${this.to}`);
+      } else {
+        // ΤΟΠΙΚΑ (Development) - Χρήση Nodemailer/Mailtrap
+        const mailOptions = {
+          from: this.from,
+          to: this.to,
+          subject,
+          html,
+          text: convert(html),
+        };
+
+        await this.newTransport().sendMail(mailOptions);
+        console.log('✅ Mailtrap Success: Email sent');
+      }
     } catch (err) {
-      // Εδώ θα δεις το ΠΡΑΓΜΑΤΙΚΟ λάθος στα Logs του Render
-      console.error('❌ ERROR IN EMAIL CLASS:', err.message);
-      console.error('Full Error details:', err);
-      throw err; 
+      // Αν το API επιστρέψει σφάλμα (π.χ. άκυρο κλειδί), θα το δούμε εδώ
+      const errorMsg = err.response ? JSON.stringify(err.response.data) : err.message;
+      console.error('❌ EMAIL ERROR:', errorMsg);
+      throw err;
     }
   }
 
