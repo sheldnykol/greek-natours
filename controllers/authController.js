@@ -449,54 +449,46 @@ exports.restrictTo = (...roles) => {
   };
 };
 exports.forgotPassword = catchAsync(async (req, res, next) => {
+  console.log('--- FORGOT PASSWORD START ---');
+  console.log('Email requested:', req.body.email);
+
   // 1) Get user based on POSTed email
-  // console.log('req : ', req);
-  if (req.host) console.log('req.host  : ', req.host);
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
+    console.log('❌ User not found with this email');
     return next(new AppError('There is no user with email address.', 404));
   }
 
   // 2) Generate the random reset token
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
+  console.log('✅ Reset token generated and saved to DB');
 
-  // // 3) Send it to user's email
-  // const resetURL = `${req.protocol}://${req.get(
-  //   'host',
-  // )}/api/v1/users/resetPassword/${resetToken}`;
-
-  // const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
-  // 3) Set reset URL based on environment
+  // 3) Set reset URL
   const baseURL = `${req.protocol}://${req.get('host')}`;
-  const resetURL =
-    process.env.NODE_ENV === 'production'
+  const resetURL = process.env.NODE_ENV?.trim() === 'production'
       ? `${baseURL}/resetPassword/${resetToken}`
       : `${baseURL}/api/v1/users/resetPassword/${resetToken}`;
 
-  //console.log('baseUrl : ', baseURL);
-  //console.log('ResetUrl : ', resetURL);
+  console.log('Reset URL created:', resetURL);
+
   try {
-    // await sendEmail({
-    //   email: user.email,
-    //   subject: 'Your password reset token (valid for 10 min)',
-    //   message,
-    // });
+    console.log('Attempting to send email via Brevo...');
     await new Email(user, resetURL).sendPasswordReset();
+    console.log('🚀 EMAIL SENT SUCCESSFULLY');
 
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!',
     });
   } catch (err) {
+    console.error('❌ EMAIL SENDING FAILED:', err.message);
+    
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
 
-    return next(
-      new AppError('There was an error sending the email. Try again later!'),
-      500,
-    );
+    return next(new AppError('There was an error sending the email. Try again later!', 500));
   }
 });
 
