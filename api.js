@@ -15,6 +15,7 @@ const bookingRouter = require('./routes/bookingRoutes');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const app = express();
+app.enable('trust proxy');
 const viewRouter = require('./routes/viewRoutes');
 
 app.set('view engine', 'pug'); // ths express alla //npm i pug
