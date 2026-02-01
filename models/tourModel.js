@@ -205,6 +205,7 @@ tourSchema.post(/^find/, function (docs, next) {
 //AUTO POY THELW NA THUMASE APO AUTA EDW EINAI OTI MPOROYME NA EXOYME MIDDLEWERE POY EKTELEITE
 //PRIN KAI META PX APO ENA TOUR POY PAW NA DHMIOYRGHSW H META
 const Tour = mongoose.model('Tour', tourSchema);
+
 //TO NEXT() xreiazetai alliws kollaei sto middlewere kai den proxwraei px sthn apothkeyesh
 //    MONO  GIA CREATE KAI SAVE METHODOUS OXI GIA INSTERNTMANY H FINBYIDANDUPDATE
 //AYTA DEN ENERGOPIHOYN AYTA TA MIDDLEWERE OTAN TREXOYN!
