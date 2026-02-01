@@ -4,6 +4,15 @@ const sharp = require('sharp');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET
+// });
+
 // const AppError = require('./../utils/appError');
 // console.log('AppError loaded:', AppError);
 
@@ -41,15 +50,50 @@ exports.uploadUserPhoto = upload.single('photo');
 exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
-  req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
 
-  await sharp(req.file.buffer)
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+  });
+
+
+
+  const fileName = `user-${req.user.id}-${Date.now()}`;
+
+  // Resize με Sharp
+  const buffer = await sharp(req.file.buffer)
     .resize(500, 500)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
-    .toFile(`public/img/users/${req.file.filename}`);
+    .toBuffer();
 
-  next();
+
+  const uploadToCloudinary = () => {
+    return new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        {
+          public_id: fileName,
+          folder: 'natours-users',
+          format: 'jpg',
+        },
+        (error, result) => {
+          if (result) resolve(result);
+          else reject(error);
+        }
+      );
+      stream.end(buffer);
+    });
+  };
+
+  try {
+    const result = await uploadToCloudinary();
+    req.file.cloudinaryUrl = result.secure_url;
+    next();
+  } catch (err) {
+    console.error('Cloudinary Error:', err);
+    return next(new AppError('Failed to upload image to Cloudinary', 500));
+  }
 });
 // const multerStorage = multer.memoryStorage(); //ara sto buffer !
 
@@ -158,7 +202,11 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
   // 2) Filtered out unwanted fields names that are not allowed to be updated
   const filteredBody = filterObj(req.body, 'name', 'email');
-  if (req.file) filteredBody.photo = req.file.filename;
+  // if (req.file) filteredBody.photo = req.file.filename;
+  if (req.file && req.file.cloudinaryUrl){
+      console.log("photo url", req.file.cloudinaryUrl);
+      filteredBody.photo = req.file.cloudinaryUrl;
+     }
 
   // 3) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
